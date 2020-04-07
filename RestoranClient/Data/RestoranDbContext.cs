@@ -18,7 +18,7 @@ namespace RestoranClient.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(Config.Configuration.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value);
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-BU8VU83\\SQLEXPRESS;Initial Catalog = RestoranNew;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,7 +35,9 @@ namespace RestoranClient.Data
                     .HasMaxLength(50)
                     .IsUnicode(false);
                 entity.HasData(new Abonent { Id = 1, Name = "Table1" },
-                               new Abonent { Id = 2, Name = "Table2" });
+                               new Abonent { Id = 2, Name = "Table2" },
+                               new Abonent { Id = 3, Name = "Table3" },
+                               new Abonent { Id = 4, Name = "Table4" });
             });
             modelBuilder.Entity<ClientCards>(entity =>
             {
@@ -65,6 +67,9 @@ namespace RestoranClient.Data
                 entity.Property(e => e.Price)
                     .HasColumnName("price")
                     .HasColumnType("numeric(18, 2)");
+                entity.HasData(new FoodItem { Id = 1, Name = "Borsh", Price = 20, Count = 2 },
+                               new FoodItem { Id = 2, Name = "Chicken Soup", Price = 50, Count = 5 },
+                               new FoodItem { Id = 3, Name = "Ice Cream", Price = 25, Count = 4 });
             });
 
             var sourceConverter = new ValueConverter<FixSource, string>(
@@ -74,12 +79,12 @@ namespace RestoranClient.Data
             {
                 entity.Property(p => p.WaiterId).HasColumnName("waiter_id");
                 entity.Property(p => p.AbonentId).HasColumnName("abonent_id");
-                entity.Property(p => p.SourceId).HasColumnName("source_id");
                 entity.Property(p => p.TimeOrder).HasColumnName("time_order");
                 entity.Property(p => p.EndOrder).HasColumnName("end_order");
-
-
                 entity.Property(p => p.FixedSource).HasConversion(sourceConverter);
+                entity.HasData(new Models.Order { Id = 1, AbonentId = 1, TimeOrder = DateTime.Now, FixedSource = FixSource.Bar ,WaiterId =1},
+                    new Models.Order { Id = 2,  AbonentId = 2, TimeOrder = DateTime.Now, FixedSource = FixSource.Bar, WaiterId = 2},
+                    new Models.Order { Id = 3, AbonentId = 3, TimeOrder = DateTime.Now, FixedSource = FixSource.Kitchen, WaiterId = 2 });
             });
             modelBuilder.Entity<Detail>(entity =>
             {
@@ -88,8 +93,17 @@ namespace RestoranClient.Data
                 entity.Property(p => p.Bill).HasColumnName("bill");
                 entity.Property(p => p.Count).HasColumnName("count");
                 entity.Property(p => p.Price).HasColumnName("price");
-            });
 
+                entity.HasData(new Detail { Id = 1, ItemsId = 1, Price = 20 },
+                               new Detail { Id = 2, ItemsId = 2, Price = 10 },
+                               new Detail { Id = 3, ItemsId = 3, Price = 15 });
+            });
+            modelBuilder.Entity<Waiter>(entity =>
+            {
+                entity.HasData(new Waiter { Id = 1, Name = "Ivan", Password = "1111" },
+                               new Waiter { Id = 2, Name = "Suzana", Password = "2222" },
+                               new Waiter { Id = 3, Name = "Andrea", Password = "3333" });
+            });
         }
 
     }
