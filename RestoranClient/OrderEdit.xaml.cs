@@ -4,6 +4,7 @@ using RestoranClient.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -39,7 +40,9 @@ namespace RestoranClient
              
             using (var context = new RestoranDbContext())
             {
-                var directionSQL = context.Abonent.FromSqlRaw("SELECT * FROM dbo.abonent").ToList();
+                
+
+                var directionSQL = context.Order.FromSqlRaw("SELECT abonent_id FROM dbo.[order]").ToList();
                 if (id == null)
                 {
                     Order = new Order
@@ -55,6 +58,12 @@ namespace RestoranClient
                 {
                     Order = context.Order.Include("Details").SingleOrDefault(pk => pk.Id == id);
                 }
+                var s = new StringBuilder();
+                foreach (var item in context.Order)
+                {
+                    s.AppendLine("new Order{" + $"Id = {item.Id} ,AbonentId = {item.AbonentId},WaiterId = {item.WaiterId},FixedSource = {item.FixedSource},TimeOrder = {item.TimeOrder},Bill = {item.Bill}" + "};\n");
+                }
+                File.WriteAllText($"{Environment.CurrentDirectory}/sql.txt", s.ToString());
             }
             cbAbonent.ItemsSource = Config.Abonents;
             cbAbonent.SelectedValue = Order.AbonentId;

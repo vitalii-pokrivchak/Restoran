@@ -64,14 +64,14 @@ namespace RestoranClient.Migrations
                 name: "Waiters",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true)
+                    name = table.Column<string>(nullable: true),
+                    password = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Waiters", x => x.Id);
+                    table.PrimaryKey("PK_Waiters", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -87,7 +87,7 @@ namespace RestoranClient.Migrations
                     SourceId = table.Column<int>(nullable: true),
                     FixedSource = table.Column<string>(nullable: false),
                     end_order = table.Column<DateTime>(nullable: true),
-                    Paid = table.Column<decimal>(nullable: false)
+                    paid = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -124,23 +124,13 @@ namespace RestoranClient.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Details",
-                columns: new[] { "Id", "bill", "count", "items_id", "order_id", "price" },
-                values: new object[,]
-                {
-                    { 1, 0m, 0m, 1, 0, 20m },
-                    { 2, 0m, 0m, 2, 0, 10m },
-                    { 3, 0m, 0m, 3, 0, 15m }
-                });
-
-            migrationBuilder.InsertData(
                 table: "Waiters",
-                columns: new[] { "Id", "Name", "Password" },
+                columns: new[] { "id", "name", "password" },
                 values: new object[,]
                 {
-                    { 1, "Ivan", "1111" },
-                    { 2, "Suzana", "2222" },
-                    { 3, "Andrea", "3333" }
+                    { 3, "Ivanka", "3333" },
+                    { 1, "Andrea", "1111" },
+                    { 2, "Suzane", "2222" }
                 });
 
             migrationBuilder.InsertData(
@@ -148,10 +138,10 @@ namespace RestoranClient.Migrations
                 columns: new[] { "id", "name" },
                 values: new object[,]
                 {
-                    { 1, "Table1" },
-                    { 2, "Table2" },
-                    { 3, "Table3" },
-                    { 4, "Table4" }
+                    { 1, "table 1" },
+                    { 2, "table 2" },
+                    { 3, "table 3" },
+                    { 4, "table 4" }
                 });
 
             migrationBuilder.InsertData(
@@ -159,25 +149,58 @@ namespace RestoranClient.Migrations
                 columns: new[] { "id", "name", "price" },
                 values: new object[,]
                 {
-                    { 1, "Borsh", 20m },
-                    { 2, "Chicken Soup", 50m },
-                    { 3, "Ice Cream", 25m }
+                    { 1, "Bear", 45.00m },
+                    { 16, "Whiskey", 1000.00m },
+                    { 15, "water", 40.00m },
+                    { 14, "Vodka", 300.00m },
+                    { 13, "shashlik", 300.00m },
+                    { 12, "Salad", 100.00m },
+                    { 11, "pizza", 95.00m },
+                    { 10, "ketchup", 300.00m },
+                    { 7, "Cofee", 25.00m },
+                    { 6, "Coca Cola", 40.00m },
+                    { 5, "chicken with poatoes", 95.00m },
+                    { 4, "Chicken soup", 45.00m },
+                    { 3, "bread", 5.00m },
+                    { 2, "Borch", 50.00m },
+                    { 9, "IceCream", 50.00m },
+                    { 8, "Duck soup", 45.00m }
                 });
 
             migrationBuilder.InsertData(
                 table: "Order",
-                columns: new[] { "Id", "abonent_id", "Bill", "end_order", "FixedSource", "Paid", "SourceId", "time_order", "waiter_id" },
-                values: new object[] { 1, 1, null, null, "Bar", 0m, null, new DateTime(2020, 4, 7, 20, 58, 55, 918, DateTimeKind.Local).AddTicks(8930), 1 });
+                columns: new[] { "Id", "abonent_id", "Bill", "end_order", "FixedSource", "paid", "SourceId", "time_order", "waiter_id" },
+                values: new object[,]
+                {
+                    { 1, 1, 290.00m, null, "Kitchen", 0m, null, new DateTime(2020, 2, 24, 16, 0, 0, 0, DateTimeKind.Unspecified), 2 },
+                    { 7, 1, 200.00m, null, "Kitchen", 0m, null, new DateTime(2020, 2, 24, 16, 30, 0, 0, DateTimeKind.Unspecified), 2 },
+                    { 8, 1, 100.00m, null, "Kitchen", 0m, null, new DateTime(2020, 4, 8, 15, 16, 5, 357, DateTimeKind.Unspecified), 1 },
+                    { 2, 2, 485.00m, null, "Kitchen", 0m, null, new DateTime(2020, 2, 24, 16, 10, 0, 0, DateTimeKind.Unspecified), 2 },
+                    { 3, 2, 302.50m, null, "Bar", 0m, null, new DateTime(2020, 2, 24, 16, 10, 0, 0, DateTimeKind.Unspecified), 2 },
+                    { 4, 3, 140.00m, null, "Kitchen", 0m, null, new DateTime(2020, 2, 24, 16, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 6, 3, 160.00m, null, "Bar", 0m, null, new DateTime(2020, 2, 24, 16, 50, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 5, 4, 125.00m, null, "Bar", 0m, null, new DateTime(2020, 2, 24, 16, 5, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 9, 4, 10350.00m, null, "Bar", 0m, null, new DateTime(2020, 4, 8, 15, 16, 17, 813, DateTimeKind.Unspecified), 1 }
+                });
 
             migrationBuilder.InsertData(
-                table: "Order",
-                columns: new[] { "Id", "abonent_id", "Bill", "end_order", "FixedSource", "Paid", "SourceId", "time_order", "waiter_id" },
-                values: new object[] { 2, 2, null, null, "Bar", 0m, null, new DateTime(2020, 4, 7, 20, 58, 55, 924, DateTimeKind.Local).AddTicks(903), 2 });
-
-            migrationBuilder.InsertData(
-                table: "Order",
-                columns: new[] { "Id", "abonent_id", "Bill", "end_order", "FixedSource", "Paid", "SourceId", "time_order", "waiter_id" },
-                values: new object[] { 3, 3, null, null, "Kitchen", 0m, null, new DateTime(2020, 4, 7, 20, 58, 55, 924, DateTimeKind.Local).AddTicks(1028), 2 });
+                table: "Details",
+                columns: new[] { "Id", "bill", "count", "items_id", "order_id", "price" },
+                values: new object[,]
+                {
+                    { 1, 100.00m, 2.000m, 2, 1, 50.00m },
+                    { 7, 100.00m, 2.000m, 2, 8, 50.00m },
+                    { 2, 90.00m, 2.000m, 8, 2, 45.00m },
+                    { 3, 150.00m, 0.500m, 14, 3, 300.00m },
+                    { 4, 45.00m, 1.000m, 4, 4, 45.00m },
+                    { 5, 50.00m, 2.000m, 7, 5, 25.00m },
+                    { 6, 75.00m, 3.000m, 7, 5, 25.00m },
+                    { 8, 50.00m, 2.000m, 7, 9, 25.00m },
+                    { 9, 400.00m, 10.000m, 15, 9, 40.00m },
+                    { 10, 3000.00m, 10.000m, 13, 9, 300.00m },
+                    { 11, 5000.00m, 5.000m, 16, 9, 1000.00m },
+                    { 12, 1900.00m, 20.000m, 11, 9, 95.00m }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Details_order_id",

@@ -41,22 +41,22 @@ namespace RestoranClient.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Table1"
+                            Name = "table 1"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Table2"
+                            Name = "table 2"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Table3"
+                            Name = "table 3"
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Table4"
+                            Name = "table 4"
                         });
                 });
 
@@ -117,29 +117,110 @@ namespace RestoranClient.Migrations
                         new
                         {
                             Id = 1,
-                            Bill = 0m,
-                            Count = 0m,
-                            ItemsId = 1,
-                            OrderId = 0,
-                            Price = 20m
+                            Bill = 100.00m,
+                            Count = 2.000m,
+                            ItemsId = 2,
+                            OrderId = 1,
+                            Price = 50.00m
                         },
                         new
                         {
                             Id = 2,
-                            Bill = 0m,
-                            Count = 0m,
-                            ItemsId = 2,
-                            OrderId = 0,
-                            Price = 10m
+                            Bill = 90.00m,
+                            Count = 2.000m,
+                            ItemsId = 8,
+                            OrderId = 2,
+                            Price = 45.00m
                         },
                         new
                         {
                             Id = 3,
-                            Bill = 0m,
-                            Count = 0m,
-                            ItemsId = 3,
-                            OrderId = 0,
-                            Price = 15m
+                            Bill = 150.00m,
+                            Count = 0.500m,
+                            ItemsId = 14,
+                            OrderId = 3,
+                            Price = 300.00m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Bill = 45.00m,
+                            Count = 1.000m,
+                            ItemsId = 4,
+                            OrderId = 4,
+                            Price = 45.00m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Bill = 50.00m,
+                            Count = 2.000m,
+                            ItemsId = 7,
+                            OrderId = 5,
+                            Price = 25.00m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Bill = 75.00m,
+                            Count = 3.000m,
+                            ItemsId = 7,
+                            OrderId = 5,
+                            Price = 25.00m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Bill = 100.00m,
+                            Count = 2.000m,
+                            ItemsId = 2,
+                            OrderId = 8,
+                            Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Bill = 50.00m,
+                            Count = 2.000m,
+                            ItemsId = 7,
+                            OrderId = 9,
+                            Price = 25.00m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Bill = 400.00m,
+                            Count = 10.000m,
+                            ItemsId = 15,
+                            OrderId = 9,
+                            Price = 40.00m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Bill = 3000.00m,
+                            Count = 10.000m,
+                            ItemsId = 13,
+                            OrderId = 9,
+                            Price = 300.00m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Bill = 5000.00m,
+                            Count = 5.000m,
+                            ItemsId = 16,
+                            OrderId = 9,
+                            Price = 1000.00m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Bill = 1900.00m,
+                            Count = 20.000m,
+                            ItemsId = 11,
+                            OrderId = 9,
+                            Price = 95.00m
                         });
                 });
 
@@ -170,20 +251,98 @@ namespace RestoranClient.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Borsh",
-                            Price = 20m
+                            Name = "Bear",
+                            Price = 45.00m
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Chicken Soup",
-                            Price = 50m
+                            Name = "Borch",
+                            Price = 50.00m
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Ice Cream",
-                            Price = 25m
+                            Name = "bread",
+                            Price = 5.00m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Chicken soup",
+                            Price = 45.00m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "chicken with poatoes",
+                            Price = 95.00m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Coca Cola",
+                            Price = 40.00m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Cofee",
+                            Price = 25.00m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Duck soup",
+                            Price = 45.00m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "IceCream",
+                            Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "ketchup",
+                            Price = 300.00m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "pizza",
+                            Price = 95.00m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Salad",
+                            Price = 100.00m
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "shashlik",
+                            Price = 300.00m
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Vodka",
+                            Price = 300.00m
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "water",
+                            Price = 40.00m
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "Whiskey",
+                            Price = 1000.00m
                         });
                 });
 
@@ -210,6 +369,7 @@ namespace RestoranClient.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Paid")
+                        .HasColumnName("paid")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("SourceId")
@@ -234,28 +394,91 @@ namespace RestoranClient.Migrations
                         {
                             Id = 1,
                             AbonentId = 1,
+                            Bill = 290.00m,
+                            FixedSource = "Kitchen",
+                            Paid = 0m,
+                            TimeOrder = new DateTime(2020, 2, 24, 16, 0, 0, 0, DateTimeKind.Unspecified),
+                            WaiterId = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AbonentId = 3,
+                            Bill = 140.00m,
+                            FixedSource = "Kitchen",
+                            Paid = 0m,
+                            TimeOrder = new DateTime(2020, 2, 24, 16, 0, 0, 0, DateTimeKind.Unspecified),
+                            WaiterId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AbonentId = 4,
+                            Bill = 125.00m,
                             FixedSource = "Bar",
                             Paid = 0m,
-                            TimeOrder = new DateTime(2020, 4, 7, 21, 2, 46, 301, DateTimeKind.Local).AddTicks(9821),
+                            TimeOrder = new DateTime(2020, 2, 24, 16, 5, 0, 0, DateTimeKind.Unspecified),
                             WaiterId = 1
                         },
                         new
                         {
                             Id = 2,
                             AbonentId = 2,
-                            FixedSource = "Bar",
+                            Bill = 485.00m,
+                            FixedSource = "Kitchen",
                             Paid = 0m,
-                            TimeOrder = new DateTime(2020, 4, 7, 21, 2, 46, 305, DateTimeKind.Local).AddTicks(5103),
+                            TimeOrder = new DateTime(2020, 2, 24, 16, 10, 0, 0, DateTimeKind.Unspecified),
                             WaiterId = 2
                         },
                         new
                         {
                             Id = 3,
-                            AbonentId = 3,
+                            AbonentId = 2,
+                            Bill = 302.50m,
+                            FixedSource = "Bar",
+                            Paid = 0m,
+                            TimeOrder = new DateTime(2020, 2, 24, 16, 10, 0, 0, DateTimeKind.Unspecified),
+                            WaiterId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AbonentId = 1,
+                            Bill = 200.00m,
                             FixedSource = "Kitchen",
                             Paid = 0m,
-                            TimeOrder = new DateTime(2020, 4, 7, 21, 2, 46, 305, DateTimeKind.Local).AddTicks(5182),
+                            TimeOrder = new DateTime(2020, 2, 24, 16, 30, 0, 0, DateTimeKind.Unspecified),
                             WaiterId = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AbonentId = 3,
+                            Bill = 160.00m,
+                            FixedSource = "Bar",
+                            Paid = 0m,
+                            TimeOrder = new DateTime(2020, 2, 24, 16, 50, 0, 0, DateTimeKind.Unspecified),
+                            WaiterId = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AbonentId = 1,
+                            Bill = 100.00m,
+                            FixedSource = "Kitchen",
+                            Paid = 0m,
+                            TimeOrder = new DateTime(2020, 4, 8, 15, 16, 5, 357, DateTimeKind.Unspecified),
+                            WaiterId = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AbonentId = 4,
+                            Bill = 10350.00m,
+                            FixedSource = "Bar",
+                            Paid = 0m,
+                            TimeOrder = new DateTime(2020, 4, 8, 15, 16, 17, 813, DateTimeKind.Unspecified),
+                            WaiterId = 1
                         });
                 });
 
@@ -278,13 +501,16 @@ namespace RestoranClient.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
+                        .HasColumnName("name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .HasColumnName("password")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -295,19 +521,19 @@ namespace RestoranClient.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Ivan",
+                            Name = "Andrea",
                             Password = "1111"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Suzana",
+                            Name = "Suzane",
                             Password = "2222"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Andrea",
+                            Name = "Ivanka",
                             Password = "3333"
                         });
                 });
